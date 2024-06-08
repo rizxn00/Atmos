@@ -18,7 +18,7 @@ export default function Weekforecast({ getForecast }: Forcast) {
     }
 
     return (
-        <div className='flex flex-col gap-16 mt-4'>
+        <div className='flex flex-col justify-between h-full'>
              {times.map((time) => (
                 <div key={time} className="flex text-center gap-5 items-center justify-between">
                     <p className="font-medium text-sm text-zinc-400">{timeToLabel(time)}</p>

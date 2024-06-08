@@ -39,7 +39,7 @@ const Forecast = ({ getForecast }: ForecastProps) => {
     };
 
     return (
-        <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5'>
+        <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 divide-x divide-zinc-500'>
             {times.map(({ label, time }) => (
                 <div key={time} className='flex flex-col gap-1 text-center items-center'>
                     {renderForecast(label, time)}

@@ -32,7 +32,7 @@ export default function Home() {
     }
   };
 
-  const API_KEY = process.env.OPEN_WEATHER_API_KEY
+  const API_KEY = process.env.NEXT_PUBLIC_OPEN_WEATHER_API_KEY
 
   useEffect(() => {
     getPosition()
@@ -68,7 +68,7 @@ export default function Home() {
   const getForecastAtTime = (time: string) => {
     if (!forecast || !forecast.list) return null;
     var today = new Date()
-    var dd = String(today.getDate()).padStart(2, '0') 
+    var dd = String(today.getDate()).padStart(2, '0')
     var mm = String(today.getMonth() + 1).padStart(2, '0')
     var yyyy = today.getFullYear()
 
@@ -128,7 +128,7 @@ export default function Home() {
           </div>
           <div id="aircondition-card" className="flex flex-col gap-5 p-5 bg-[#202b3c] w-full shadow-sm rounded-2xl">
             <p className="font-semibold text-zinc-400">AIR CONDITIONS</p>
-            <AirConditions realFeel={Math.floor(response.main?.feels_like)} wind={Math.round((response.wind?.speed * 3.6) * 100) / 100} chanceofRain={response.clouds?.all} Humidity={response.main?.humidity} />
+            <AirConditions realFeel={Math.floor(response.main?.feels_like)} wind={Math.round((response.wind?.speed * (18 / 5)) * 100) / 100} chanceofRain={response.clouds?.all} Humidity={response.main?.humidity} />
           </div>
         </div>
 
