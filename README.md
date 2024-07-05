@@ -1,4 +1,4 @@
-# Atmos: Just Another Weather App
+# Atmos
 Ah, yes, another weather app! Because the world desperately needs more of those. But hey, at least this one has a cool name: Atmos! It's like "atmosphere," but shorter and hipper 🌨️. 
 
 ### What's Special About Atmos?
