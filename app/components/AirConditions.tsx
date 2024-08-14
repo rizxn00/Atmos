@@ -19,7 +19,7 @@ export default function AirConditions({ realFeel, wind, chanceofRain, Humidity }
                 <FaTemperatureHalf size={20} className='text-zinc-400' />
                 <div className="flex flex-col">
                     <p className='font-medium text-zinc-400'>Real Feel</p>
-                    <p className='text-3xl font-semibold text-zinc-200'>{realFeel}°</p>
+                    <p className='text-xl md:text-3xl font-semibold text-zinc-200'>{realFeel}°</p>
                 </div>
             </div>
 
@@ -27,7 +27,7 @@ export default function AirConditions({ realFeel, wind, chanceofRain, Humidity }
                 <FaWind size={20} className='text-zinc-400' />
                 <div className="flex flex-col">
                     <p className='font-medium text-zinc-400'>Wind</p>
-                    <p className='text-3xl font-semibold text-zinc-200'>{wind} km/h</p>
+                    <p className='text-xl md:text-3xl font-semibold text-zinc-200'>{wind} km/h</p>
                 </div>
             </div>
 
@@ -35,7 +35,7 @@ export default function AirConditions({ realFeel, wind, chanceofRain, Humidity }
                 <IoWaterSharp size={20} className='text-zinc-400' />
                 <div className="flex flex-col">
                     <p className='font-medium text-zinc-400'>Chance of rain</p>
-                    <p className='text-3xl font-semibold text-zinc-200'>{chanceofRain}%</p>
+                    <p className='text-xl md:text-3xl font-semibold text-zinc-200'>{chanceofRain}%</p>
                 </div>
             </div>
 
@@ -43,7 +43,7 @@ export default function AirConditions({ realFeel, wind, chanceofRain, Humidity }
                 <BiWater size={20} className='text-zinc-400' />
                 <div className="flex flex-col">
                     <p className='font-medium text-zinc-400'>Humidity</p>
-                    <p className='text-3xl font-semibold text-zinc-200'>{Humidity}%</p>
+                    <p className='text-xl md:text-3xl font-semibold text-zinc-200'>{Humidity}%</p>
                 </div>
             </div>
         </div>

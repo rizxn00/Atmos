@@ -65,22 +65,34 @@ export default function Home() {
   }, [API_KEY, lat, lon])
 
 
-  const getForecastAtTime = (time: string) => {
-    if (!forecast || !forecast.list) return null;
-    var today = new Date()
-    var dd = String(today.getDate()).padStart(2, '0')
-    var mm = String(today.getMonth() + 1).padStart(2, '0')
-    var yyyy = today.getFullYear()
+  const getForecast = () => {
+    if (!forecast || !forecast.list) return [];
 
-    var date = yyyy + '-' + mm + '-' + dd
+    const formatTime = (date: Date) => {
+        let hours = date.getHours();
+        const minutes = date.getMinutes();
+        const period = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12 || 12; // Convert to 12-hour format
+        const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+        return `${hours}:${formattedMinutes} ${period}`;
+    };
 
-    const closestForecast = forecast.list.find((item: any) => {
-      const itemTime = item.dt_txt;
-      return itemTime === (date + ' ' + time);
+    // Return the first 6 forecasts
+    const upcomingForecasts = forecast.list.slice(0, 6).map((item: any) => {
+        const dateTime = new Date(item.dt * 1000); // Convert from Unix timestamp to Date object
+        const formattedTime = formatTime(dateTime);
+
+        return {
+            label: formattedTime,
+            time: formattedTime,
+            forecast: item
+        };
     });
 
-    return closestForecast;
-  };
+    return upcomingForecasts;
+};
+
+
 
   const getTommorowsForecast = (time: string) => {
     if (!forecast || !forecast.list) return null;
@@ -124,7 +136,7 @@ export default function Home() {
           </div>
           <div id="forecast-card" className="flex flex-col gap-5 p-5 bg-[#202b3c] w-full shadow-sm rounded-2xl">
             <p className="font-semibold text-zinc-400">TODAY'S FORECAST</p>
-            <Forecast getForecast={getForecastAtTime} />
+            <Forecast getForecast={getForecast} />
           </div>
           <div id="aircondition-card" className="flex flex-col gap-5 p-5 bg-[#202b3c] w-full shadow-sm rounded-2xl">
             <p className="font-semibold text-zinc-400">AIR CONDITIONS</p>
