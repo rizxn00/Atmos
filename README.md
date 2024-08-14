@@ -1,4 +1,4 @@
-# Atmos: Just Another Weather App
+# Atmos
 Ah, yes, another weather app! Because the world desperately needs more of those. But hey, at least this one has a cool name: Atmos! It's like "atmosphere," but shorter and hipper 🌨️. 
 
 ### What's Special About Atmos?
@@ -18,7 +18,7 @@ Absolutely nothing! Atmos is a basic weather app with limited functionality, jus
 
 #### Screenshot
 
-![Atmos](https://github.com/rizxn00/Atmos/assets/96716880/19c59d58-ccf1-466a-aaf4-c45012c6c44f)
+![Atmos](https://github.com/rizxn00/Atmos/assets/96716880/1e6f5677-7da0-4a62-a08a-cce104abe003)
 
 
 
